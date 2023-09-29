@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: Config-Server
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          default-label: master
+          uri: https://github.com/Doman5/config-server-repo

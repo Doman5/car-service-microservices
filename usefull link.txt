@@ -1,0 +1,1 @@
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.4&packaging=jar&jvmVersion=21&groupId=com.domanski&artifactId=car-service&name=car-service&description=car%20service&packageName=com.domanski.carservice&dependencies=actuator,cloud-config-server,zipkin,cloud-config-client,web,lombok,cloud-resilience4j,cloud-bus,cloud-feign,mysql,data-jpa,webflux

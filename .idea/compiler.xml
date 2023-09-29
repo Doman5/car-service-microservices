@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="worker-service" />
+        <module name="config-client" />
+        <module name="api-gateway" />
+        <module name="car-owner-service" />
+        <module name="financial-service" />
+        <module name="car-service" />
+        <module name="service-registry" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="19" />
+      <module name="car-owner-service" target="17" />
+      <module name="car-repair-service" target="19" />
+      <module name="car-service" target="19" />
+      <module name="car-work-service" target="19" />
+      <module name="config-client" target="19" />
+      <module name="financial-service" target="19" />
+      <module name="meetings-service" target="19" />
+      <module name="repair-invoices-service" target="19" />
+      <module name="service-registry" target="19" />
+      <module name="worker-service" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="car-owner-service" options="-parameters" />
+      <module name="car-repair-service" options="-parameters" />
+      <module name="car-service" options="-parameters" />
+      <module name="car-work-service" options="-parameters" />
+      <module name="config-client" options="-parameters" />
+      <module name="financial-service" options="-parameters" />
+      <module name="meetings-service" options="-parameters" />
+      <module name="repair-invoices-service" options="-parameters" />
+      <module name="service-registry" options="-parameters" />
+      <module name="worker-service" options="-parameters" />
+    </option>
+  </component>
+</project>

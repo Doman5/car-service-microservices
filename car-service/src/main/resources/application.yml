@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: CAR-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/microservices_car
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+  config:
+    import: optional:configserver:http://localhost:8888/

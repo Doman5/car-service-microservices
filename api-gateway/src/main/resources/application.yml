@@ -1,0 +1,15 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes[0]:
+        id: CAR-SERVICE
+        uri: lb://CAR-SERVICE
+        predicates[0]: Path=/cars/**
+      routes[1]:
+        id: CAR-OWNER-SERVICE
+        uri: lb://CAR-OWNER-SERVICE
+        predicates[0]: Path=/owners/**

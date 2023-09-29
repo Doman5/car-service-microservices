@@ -1,0 +1,43 @@
+package com.domanski.carservice;
+
+import com.domanski.carservice.model.dto.CarRequest;
+import com.domanski.carservice.model.dto.CarResponse;
+import com.domanski.carservice.exception.CarNoFoundException;
+import com.domanski.carservice.CarMapper;
+import com.domanski.carservice.model.Car;
+import com.domanski.carservice.CarRepo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class CarService {
+
+    private final CarRepo carRepo;
+
+    public List<CarResponse> getAllCars() {
+        return carRepo.findAll().stream()
+                .map(CarMapper::mapToCarResponse)
+                .toList();
+    }
+
+    public CarResponse getCar(Long id) {
+        Car car = carRepo.findById(id)
+                .orElseThrow(() -> new CarNoFoundException("Car with %d no found".formatted(id)));
+        return CarMapper.mapToCarResponse(car);
+    }
+
+    public CarResponse saveCar(CarRequest carRequest) {
+        Car carToSave = CarMapper.mapToCar(carRequest);
+        Car savedCar = carRepo.save(carToSave);
+        return CarMapper.mapToCarResponse(savedCar);
+    }
+
+    public List<CarResponse> getAllCarsByUserId(Long ownerId) {
+        return carRepo.findAllByCarOwnerId(ownerId).stream()
+                .map(CarMapper::mapToCarResponse)
+                .toList();
+    }
+}
