@@ -1,5 +1,6 @@
 package com.domanski.carservice;
 
+import com.domanski.carservice.model.dto.CarFullInfoResponse;
 import com.domanski.carservice.model.dto.CarRequest;
 import com.domanski.carservice.model.dto.CarResponse;
 import jakarta.validation.Valid;
@@ -16,12 +17,11 @@ import java.util.List;
 public class CarController {
 
     private final CarService carService;
-    private final CarRepo carRepo;
 
     @GetMapping("/{id}")
-    public ResponseEntity<CarResponse> getCar(@PathVariable Long id) {
-        CarResponse car = carService.getCar(id);
-        return ResponseEntity.ok(car);
+    public ResponseEntity<CarFullInfoResponse> getCar(@PathVariable Long id) {
+        CarFullInfoResponse response = carService.getCar(id);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping
